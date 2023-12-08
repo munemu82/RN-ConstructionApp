@@ -9,15 +9,18 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 //import { Avatar } from "@/components/avatar";
 
-export const ProfileScreen = () => {
+export const ProfileScreen = (props) => {
+  const user = props.userData;
+
+  console.log(user)
   return (
     <SafeAreaView className="w-full flex-1 bg-gray-950">
       <View className="flex-1 items-center justify-center">
         <View className="gap-2 items-center">
           <Text className="text-gray-50 text-3xl font-bold">
-            Joe Doe
+          {user.fullName}
           </Text>
-          <Text className="text-gray-50 text-lg">joe@bloggs1.com</Text>
+          <Text className="text-gray-50 text-lg">{user.email}</Text>
           
         </View>
       </View>

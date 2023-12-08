@@ -17,7 +17,7 @@ const TopNavigator = (props) => {
             <Tab.Screen 
                 key={key}
                 name={s.name} 
-                component={s.component} 
+                //component={s.component} 
                 /* options={{ 
                   tabBarIcon: () =>s.icon,
                 }} */
@@ -33,7 +33,15 @@ const TopNavigator = (props) => {
                       s.icon
                     ),
                 }}
-            />
+            >
+               { 
+                  props => <s.component 
+                  {...props} userData={s.userData}  
+                 
+                  />
+                  
+              }
+              </Tab.Screen>
         )
         )
        } 

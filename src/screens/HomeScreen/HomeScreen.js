@@ -20,7 +20,7 @@ export default function HomeScreen(props) {
     const entityRef = firebase.firestore().collection('entities')
     const user = props.extraData
 
-console.log(user)
+//console.log(user)
     useEffect(() => {
         // Get some data based on the logged in user
     }, [])
@@ -40,21 +40,24 @@ console.log(user)
                     name: "UserScreen", component:UserScreen, 
                     Focusedicon:<Icon name="home" size={25} color="blue" />,
                     icon:<Icon name="home" size={25} color="black" />,
-                    tabBarLabel:()=> {return null}
+                    tabBarLabel:()=> {return null},
+                    userData:user
                 },
             {   
                 name: "Profile", 
                 component:ProfileScreen,
                 Focusedicon:<FontAwesomeIcon name="user-circle" size={25} color="blue" />,
                 icon:<FontAwesomeIcon name="user-circle" size={25} color="black" />,
-                tabBarLabel:()=> {return null}
+                tabBarLabel:()=> {return null},
+                userData:user
             },
             {   
                 name: "Settings", 
                 component:SettingsScreen,
                 Focusedicon:<Ionicons name="settings-outline" size={25} color="blue" />,
                 icon:<Ionicons name="settings-outline" size={25} color="black" />,
-                tabBarLabel:()=> {return null}
+                tabBarLabel:()=> {return null},
+                userData:user
             },
             ]
             
